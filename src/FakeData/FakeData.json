@@ -1,0 +1,20 @@
+[{
+    "id": 2003,
+    "VehicleName": "Bike",
+    "imgURL": "https://i.imgur.com/sgJYLlo.png"
+  },
+  {
+    "id": 2005,
+    "VehicleName": "Bus",
+    "imgURL": "https://i.imgur.com/dpKSqoW.png"
+  },
+   {
+    "id": 1993,
+    "VehicleName": "Car",
+    "imgURL": "https://i.imgur.com/7KTqQsT.png"
+  },
+   {
+    "id": 2012,
+    "VehicleName": "Train",
+    "imgURL": "https://i.imgur.com/90sonJC.png"
+  }]
