@@ -6,74 +6,61 @@ const mapUrl = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49122.8284
 
 const DestinationCheck = () => {
     const { Vehicle } = useParams()
-
     const [rideCheckOut, setRideCheckOut] = useState({}) 
-    // console.log(rideCheckOut.PickTo);
     const [showForm,setShowForm ] = useState(true)
-    console.log(showForm.PickTo); 
 
     useEffect(()=>{
         const findVehicleFromFakeData = fakeData.find(details => details.VehicleName === Vehicle)
         setRideCheckOut(findVehicleFromFakeData)
     },[Vehicle])
+    
+    //toogle form
     const handleSubmitRide = (e)=>{
-        
-        
         setShowForm(!showForm)
         e.preventDefault()
     }
 
+    // onBluer 
     const cathFeildValue = (e) =>{
-       let isFeildValid;
-       if (e.target.name === "PickTo") { 
-        isFeildValid = e.target.value
-        // console.log(isFeildValid);
-     }
-       if (e.target.name === "PickFrom") { 
-        isFeildValid = e.target.value
-        // console.log(isFeildValid);
-     }
-     if (isFeildValid) {
-         const newData = {...rideCheckOut}
-         newData[e.target.name] = e.target.value
-         setShowForm(newData)
-     }
+    const newRideCheckOut = {...rideCheckOut}
+    newRideCheckOut[e.target.name] = e.target.value
+    setRideCheckOut(newRideCheckOut)
         
     }
     
     return (
-        <div className="container">
+        <div className="container mb-5">
             <div className="row h-50">
                 <div className="col-md-5 mt-5">
-                    <form className="border p-2">
+                    <div>
                         {
-                             showForm ? <div>
+                             showForm ? <form className="border p-2">
                                 <div class="mb-3">
                             <label for="exampleInputEmail1" className="form-label">Pick To</label>
-                            <input type="text" name="PickTo" className="form-control" onBlur={cathFeildValue} id="exampleInputEmail1" placeholder="Mirpur-1" aria-describedby="emailHelp"/>
+                            <input type="text" required name="PickTo" className="form-control" onBlur={cathFeildValue} id="exampleInputEmail1" placeholder="Mirpur-1" />
                         </div>
                         <div className="mb-3">
                             <label for="exampleInputPassword1" className="form-label">Password</label>
-                            <input type="text" name="PickFrom" onBlur={cathFeildValue} placeholder="Dhanmondi" className="form-control" id="exampleInputPassword1"/>
+                            <input type="text" required name="PickFrom" onBlur={cathFeildValue} placeholder="Dhanmondi" className="form-control" id="exampleInputPassword1"/>
                         </div>
                         <div className="mb-3">
                             <label for="exampleInputPassword1" className="form-label">Date</label>
-                            <input type="date" name="date" onBlur={cathFeildValue} className="form-control" id="exampleInputPassword1"/>
+                            <input type="date" required name="date" onBlur={cathFeildValue} className="form-control" id="exampleInputPassword1"/>
                         </div>
                         <div className="mb-3">
                             <label for="exampleInputPassword1" className="form-label">Vehicle</label>
                             <input type="text" className="form-control" id="exampleInputPassword1" value={Vehicle} readOnly/>
                         </div>
-                            </div> :
+                            </form> :
                              <div className="checkOutForm">
                                  {/**fixed card */}
                                     <div className="card">
-                                        <div className="row p-1">
+                                        <div className="row p-2">
                                             <div className="col">
-                                                <h2>From: <span className="text-danger"> Gabtoli</span></h2>
+                                                <h4>From: <span className="text-danger"> {rideCheckOut.PickTo}</span></h4>
                                             </div>
                                             <div className="col p-1">
-                                                <h2>To: <span className="text-danger">Mirpur</span></h2>
+                                                <h4>To: <span className="text-danger">{rideCheckOut.PickFrom}</span></h4>
                                             </div>
                                         </div>
                                     </div>
@@ -124,7 +111,7 @@ const DestinationCheck = () => {
                        {
                          showForm ? <button onClick={handleSubmitRide} className="w-100 btn btn-primary mt-2" type="submit">Search</button> : <button onClick={handleSubmitRide} className="w-100 btn btn-primary mt-2" type="submit">Go Back</button>
                        }
-                    </form>
+                    </div>
                 </div>
                 <div className="col-md-7 mt-5 ">
                     <iframe src={mapUrl} frameborder="5px" title="did's_GoogleMap" style={{width:'100%', height:"100%"}}></iframe>

@@ -7,12 +7,12 @@ const VehicleCard = (props) => {
     const handleClickOnCard = () =>{
         history.push(`/${VehicleName}`)
     }
-    return (
-        <div style={{cursor:'pointer'}} onClick={handleClickOnCard} className="card col-md-3 col-sm-12 text-center m-2 w-25">
-            <div className="card-body">
-                <img style={{width:'100px'}} src={imgURL} alt=""/>
-                <h5 className="card-title">{VehicleName}</h5>
-            </div>
+return (    
+        <div style={{cursor:'pointer'}} onClick={handleClickOnCard} className="card col-sm mt-5 text-center m-1">
+        <div className="card-body">
+            <img style={{width:'70%'}} src={imgURL} alt=""/>
+            <h5 className="card-title">{VehicleName}</h5>
+        </div>
         </div>
     );
 };

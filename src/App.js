@@ -13,14 +13,15 @@ import { createContext, useState } from 'react';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Blog from './Components/Blog/Blog';
 import Contact from './Components/Contact/Contact';
+import PageNotFound from './Components/PageNotFound/PageNotFound';
 export const userContext = createContext()
 
 function App() {
   const [loggedInUser,setLoggedInuser]= useState([])
   return (
     <userContext.Provider value={[loggedInUser,setLoggedInuser]}>
-      <div className="" >
       <Router>
+      
         <Header/>
         <Switch>
           <Route  path="/home">
@@ -45,11 +46,10 @@ function App() {
             <Home/>
           </Route>
           <Route path="*">
-            <Home/>
+            <PageNotFound/>
           </Route>
         </Switch>
       </Router>
-      </div>
     </userContext.Provider>
   );
 }

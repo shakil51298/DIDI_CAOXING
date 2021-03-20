@@ -9,8 +9,8 @@ const Home = () => {
     },[])
     return (
         <div className="App">
-            <div className="container">
-                <div className="row">
+            <div className="container ">
+                <div className=" row">
                     {
                         fakeVehicle.map(vehicle => <VehicleCard vehicle={vehicle} key = {vehicle.id}></VehicleCard>)
                     }

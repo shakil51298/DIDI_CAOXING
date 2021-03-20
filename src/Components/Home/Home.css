@@ -1,10 +1,12 @@
-.mains{
-    height: 100%;
-    border: 1px;
-}
-.home{
-    background: url(../../images/Bg.png);
+.App{
+    background-image:url(../../images/Bg.png);
+    height:1000px;
     background-repeat: no-repeat;
     background-attachment: fixed; 
     background-size: 100% 100%;
+  }
+.cards{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 5px;
 }

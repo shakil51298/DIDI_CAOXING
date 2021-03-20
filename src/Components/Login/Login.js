@@ -40,7 +40,6 @@ const Login = () => {
             const signedInUser = {isLoggedIn: true, name: displayName, email: email, photo : phototURL}
             setLoggedInuser(signedInUser)
             history.replace(from)
-            // console.log(res.user);
         })
         .catch(err => {
             console.log(err.message);
@@ -88,7 +87,6 @@ const Login = () => {
              const  newLoggedInUserInfo = {...loggedInUser }
              newLoggedInUserInfo[e.target.name] = e.target.value;
              setLoggedInuser(newLoggedInUserInfo)
-            //  console.log(e.target.value);
          }
      }
 
@@ -96,8 +94,6 @@ const Login = () => {
         if ( newUser && loggedInUser.email && loggedInUser.password) {
             firebase.auth().createUserWithEmailAndPassword(loggedInUser.email, loggedInUser.password)
             .then(res => {
-                // const {displayName, email, phototURL} = res.user
-                // const signedInUser = {isLoggedIn: true, name: displayName, email: email, photo : phototURL}
                 console.log(res.user);
                 const signedInUser = {...loggedInUser}
                 signedInUser.error = ''
@@ -137,14 +133,14 @@ const Login = () => {
           displayName: name
         })
           .then(function () {
-            console.log("user name updated successfully")
+           
           })
           .catch(function (error) {
-            console.log(error);
+           
           });
       }
     return (
-        <div className="container ml-5 mr-5">
+        <div className="container">
             {
                 !loggedInUser.isLoggedIn && loggedInUser.submitTure && <p className="mt-5 text-danger">You Should Log in or Signup first</p>
             }
@@ -192,7 +188,7 @@ const Login = () => {
             </form>
                 
             {
-                loggedInUser.isLoggedIn ? <button className="w-100 mt-2 btn btn-primary mt-1"  onClick={signOut}>Log Out</button> :  <div>
+                loggedInUser.isLoggedIn && loggedInUser.email ? <button className="w-100 mt-2 btn btn-primary mt-1"  onClick={signOut}>Log Out</button> :  <div>
                 <div><button onClick={signInWithGoogleHandler} className="mt-2 btn btn-primary w-100">signin with google</button></div>
                 <button onClick={signInWithFaceBook} className="w-100 mt-2 btn btn-primary">signin with Facebook</button>
                 </div> 
