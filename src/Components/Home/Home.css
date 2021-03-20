@@ -1,0 +1,10 @@
+.mains{
+    height: 100%;
+    border: 1px;
+}
+.home{
+    background: url(../../images/Bg.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+}

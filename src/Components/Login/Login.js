@@ -27,7 +27,6 @@ const Login = () => {
             const signedInUser = {isLoggedIn: true, name: displayName, email: email, photo : phototURL}
             setLoggedInuser(signedInUser)
             history.replace(from)
-            // console.log(res.user)
         })
         .catch(err => {
             // console.log(err.message)
@@ -41,7 +40,7 @@ const Login = () => {
             const signedInUser = {isLoggedIn: true, name: displayName, email: email, photo : phototURL}
             setLoggedInuser(signedInUser)
             history.replace(from)
-            console.log(res.user);
+            // console.log(res.user);
         })
         .catch(err => {
             console.log(err.message);
@@ -89,7 +88,7 @@ const Login = () => {
              const  newLoggedInUserInfo = {...loggedInUser }
              newLoggedInUserInfo[e.target.name] = e.target.value;
              setLoggedInuser(newLoggedInUserInfo)
-             console.log(e.target.value);
+            //  console.log(e.target.value);
          }
      }
 
@@ -102,7 +101,6 @@ const Login = () => {
                 console.log(res.user);
                 const signedInUser = {...loggedInUser}
                 signedInUser.error = ''
-                console.log(loggedInUser.name)
                 updateUserName(loggedInUser.name)
                 signedInUser.success = true;
                 signedInUser.submitTure = true;

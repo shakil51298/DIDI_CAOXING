@@ -18,7 +18,8 @@ export const userContext = createContext()
 function App() {
   const [loggedInUser,setLoggedInuser]= useState([])
   return (
-    <userContext.Provider className="App" value={[loggedInUser,setLoggedInuser]}>
+    <userContext.Provider value={[loggedInUser,setLoggedInuser]}>
+      <div className="" >
       <Router>
         <Header/>
         <Switch>
@@ -48,6 +49,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
+      </div>
     </userContext.Provider>
   );
 }

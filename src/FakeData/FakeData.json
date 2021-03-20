@@ -1,20 +1,45 @@
 [{
     "id": 2003,
     "VehicleName": "Bike",
-    "imgURL": "https://i.imgur.com/sgJYLlo.png"
+    "imgURL": "https://i.imgur.com/sgJYLlo.png",
+    "thumb1": "https://i.imgur.com/sgJYLlo.png",
+    "thumb2": "https://i.imgur.com/sgJYLlo.png",
+    "thumb3": "https://i.imgur.com/sgJYLlo.png",
+    "sit": 4,
+    "price" :"$67",
+    "avatar":"https://i.imgur.com/pJdASLr.png"
+
   },
   {
     "id": 2005,
     "VehicleName": "Bus",
-    "imgURL": "https://i.imgur.com/dpKSqoW.png"
+    "imgURL": "https://i.imgur.com/dpKSqoW.png",
+    "thumb1": "https://i.imgur.com/dpKSqoW.png",
+    "thumb2": "https://i.imgur.com/dpKSqoW.png",
+    "thumb3": "https://i.imgur.com/dpKSqoW.png",
+    "sit": 2,
+    "price" :"$50",
+    "avatar":"https://i.imgur.com/pJdASLr.png"
   },
    {
     "id": 1993,
     "VehicleName": "Car",
-    "imgURL": "https://i.imgur.com/7KTqQsT.png"
+    "imgURL": "https://i.imgur.com/7KTqQsT.png",
+    "thumb1": "https://i.imgur.com/7KTqQsT.png",
+    "thumb2": "https://i.imgur.com/7KTqQsT.png",
+    "thumb3": "https://i.imgur.com/7KTqQsT.png",
+    "sit": 3,
+    "price" :"$100",
+    "avatar":"https://i.imgur.com/pJdASLr.png"
   },
    {
     "id": 2012,
     "VehicleName": "Train",
-    "imgURL": "https://i.imgur.com/90sonJC.png"
+    "imgURL": "https://i.imgur.com/90sonJC.png",
+    "thumb1": "https://i.imgur.com/90sonJC.png",
+    "thumb2": "https://i.imgur.com/90sonJC.png",
+    "thumb3": "https://i.imgur.com/90sonJC.png",
+    "sit": 1000,
+    "price" :"$40",
+    "avatar":"https://i.imgur.com/pJdASLr.png"
   }]
