@@ -112,7 +112,9 @@ const Login = () => {
         if (!newUser && loggedInUser.email && loggedInUser.password) {
             firebase.auth().signInWithEmailAndPassword(loggedInUser.email, loggedInUser.password)
             .then(res => {
-            const signedInUser = { ...loggedInUser }
+            // const {displayName, email, phototURL} = res.user
+            // const signedInUser = {isLoggedIn: true, name: displayName, email: email, photo : phototURL}
+            const signedInUser = {...loggedInUser}
             signedInUser.error = ''
             signedInUser.success = true;
             history.replace(from)
@@ -188,7 +190,7 @@ const Login = () => {
             </form>
                 
             {
-                loggedInUser.isLoggedIn && loggedInUser.email ? <button className="w-100 mt-2 btn btn-primary mt-1"  onClick={signOut}>Log Out</button> :  <div>
+                loggedInUser.isLoggedIn && !newUser ? <button className="w-100 mt-2 btn btn-primary mt-1"  onClick={signOut}>Log Out</button> :  <div>
                 <div><button onClick={signInWithGoogleHandler} className="mt-2 btn btn-primary w-100">signin with google</button></div>
                 <button onClick={signInWithFaceBook} className="w-100 mt-2 btn btn-primary">signin with Facebook</button>
                 </div> 
