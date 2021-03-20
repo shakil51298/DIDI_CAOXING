@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router';
 
 const VehicleCard = (props) => {
-    const {VehicleName, imgURL, price,sit } = props.vehicle
+    const {VehicleName, imgURL } = props.vehicle
     const history = useHistory()
     const handleClickOnCard = () =>{
         history.push(`/${VehicleName}`)

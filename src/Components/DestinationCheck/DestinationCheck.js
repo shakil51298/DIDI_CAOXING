@@ -1,5 +1,5 @@
 import React, {useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
+// import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import fakeData from '../../FakeData/FakeData.json'
 const mapUrl = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49122.82840063697!2d90.30459973373641!3d23.780305525636333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c0e96fce29dd%3A0x6ccd9e51aba9e64d!2sMirpur-1%2C%20Dhaka%2C%20Bangladesh!5e0!3m2!1sen!2shk!4v1616189898974!5m2!1sen!2shk';
@@ -15,7 +15,7 @@ const DestinationCheck = () => {
     useEffect(()=>{
         const findVehicleFromFakeData = fakeData.find(details => details.VehicleName === Vehicle)
         setRideCheckOut(findVehicleFromFakeData)
-    })
+    },[Vehicle])
     const handleSubmitRide = (e)=>{
         
         
