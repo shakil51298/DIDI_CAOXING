@@ -21,7 +21,7 @@ const Header = () => {
                             <Link className="nav-link" to="/contact">Contact</Link>
                             <Link className="nav-link" to="/login">Login</Link>
                             {
-                                <Link className="nav-link text-warning"  to="/login">{loggedInUser.name || loggedInUser.email}</Link>
+                                 <Link className="nav-link text-warning"  to="/login">{loggedInUser.name || loggedInUser.email}</Link>
                             }
                         </div>
                     </div>

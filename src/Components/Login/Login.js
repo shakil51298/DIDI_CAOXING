@@ -99,7 +99,7 @@ const Login = () => {
                 signedInUser.error = ''
                 updateUserName(loggedInUser.name)
                 signedInUser.success = true;
-                signedInUser.submitTure = true;
+                signedInUser.submitTrue = true;
                 setLoggedInuser(signedInUser)
             })
             .catch((error) => {
@@ -143,10 +143,10 @@ const Login = () => {
     return (
         <div className="container">
             {
-                !loggedInUser.isLoggedIn && loggedInUser.submitTure && <p className="mt-5 text-danger">You Should Log in or Signup first</p>
+                !loggedInUser.isLoggedIn && <p className="mt-5 text-danger">You Should Log in or Signup first</p>
             }
             {
-                newUser && loggedInUser.email && loggedInUser.submitTure && <p style={{color:'green'}}> Hello, <span className="text-danger">{loggedInUser.name}</span> ,<span className="badge">Thanks For Signed Up to our web app, Now you aer permited to visit our Proteced page "Destination, and other"</span> </p>
+                newUser && loggedInUser.email && loggedInUser.submitTrue && <p style={{color:'green'}}> Hello, <span className="text-danger">{loggedInUser.name}</span> ,<span className="badge">Thanks For Signed Up to our web app, Now you aer permited to visit our Proteced page "Destination, and other"</span> </p>
             }
             <p className="mt-2 mb-5 text-danger"> {loggedInUser.error}</p>
             {
@@ -192,7 +192,7 @@ const Login = () => {
             </form>
                 
             {
-                loggedInUser.password ? <button className="w-100 mt-2 btn btn-primary mt-1"  onClick={signOut}>Log Out</button> :  <div>
+                loggedInUser.email ? <button className="w-100 mt-2 btn btn-primary mt-1"  onClick={signOut}>Log Out</button> :  <div>
                 <div><button onClick={signInWithGoogleHandler} className="mt-2 btn btn-primary w-100">signin with google</button></div>
                 <button onClick={signInWithFaceBook} className="w-100 mt-2 btn btn-primary">signin with Facebook</button>
                 </div> 
