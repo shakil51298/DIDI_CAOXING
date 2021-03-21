@@ -61,7 +61,7 @@ const Login = () => {
           setLoggedInuser(logOutUser)
         })
         .catch((error) => {
-          console.log(error.message);
+        //   console.log(error.message);
         });
      }
 
@@ -140,7 +140,6 @@ const Login = () => {
            
           });
       }
-      console.log(loggedInUser);
     return (
         <div className="container">
             {
@@ -193,7 +192,7 @@ const Login = () => {
             </form>
                 
             {
-                loggedInUser.isLoggedIn ? <button className="w-100 mt-2 btn btn-primary mt-1"  onClick={signOut}>Log Out</button> :  <div>
+                loggedInUser.password ? <button className="w-100 mt-2 btn btn-primary mt-1"  onClick={signOut}>Log Out</button> :  <div>
                 <div><button onClick={signInWithGoogleHandler} className="mt-2 btn btn-primary w-100">signin with google</button></div>
                 <button onClick={signInWithFaceBook} className="w-100 mt-2 btn btn-primary">signin with Facebook</button>
                 </div> 
