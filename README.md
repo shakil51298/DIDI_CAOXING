@@ -3,16 +3,16 @@
 
 
 ### Advantage 
-    - User can select any a vehicle;
-    - But before select a Vehicle user should log in or sign up first, otherwith it will kick the user!!
-    - After Authinticated user can visit any page of this web app;
-    - user can choice Pick up location and Pick to location and date also.
-    - user can search How amy vehicle are avilable nearby.
-    - and also user can check the live google map direction.
+- User can select any a vehicle; :+1:
+- But before select a Vehicle user should log in or sign up first, otherwith it will kick the user!!
+- After Authinticated user can visit any page of this web app;
+- user can choice Pick up location and Pick to location and date also.
+- user can search How amy vehicle are avilable nearby.
+- and also user can check the live google map direction.
 
 ##### ` Thats all for this Web-App -- DIDI`
 ### Pupose : ` Fully Learning purpose` 
-<!-- - List  -->
+- List 
 <!-- Use `git status` to list all new or modified files that haven't yet been committed. -->
 
 
