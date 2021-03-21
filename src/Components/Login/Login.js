@@ -100,6 +100,7 @@ const Login = () => {
                 updateUserName(loggedInUser.name)
                 signedInUser.success = true;
                 signedInUser.submitTrue = true;
+                history.replace(from)
                 setLoggedInuser(signedInUser)
             })
             .catch((error) => {
@@ -146,7 +147,7 @@ const Login = () => {
                 !loggedInUser.isLoggedIn && <p className="mt-5 text-danger">You Should Log in or Signup first</p>
             }
             {
-                newUser && loggedInUser.email && loggedInUser.submitTrue && <p style={{color:'green'}}> Hello, <span className="text-danger">{loggedInUser.name}</span> ,<span className="badge">Thanks For Signed Up to our web app, Now you aer permited to visit our Proteced page "Destination, and other"</span> </p>
+                newUser && loggedInUser.email && loggedInUser.submitTrue && <p style={{color:'green'}}> Hello, <span className="text-danger">{loggedInUser.name}</span> ,<span className="badge">Thanks For Signed Up to our web app.</span></p>
             }
             <p className="mt-2 mb-5 text-danger"> {loggedInUser.error}</p>
             {
