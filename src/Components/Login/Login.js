@@ -49,7 +49,7 @@ const Login = () => {
      const signOut = () =>{
         firebase.auth().signOut()
         .then(res => {
-          const outUser = {
+          const logOutUser = {
             isLogedIn: false,
             email: "",
             name: '',
@@ -58,12 +58,13 @@ const Login = () => {
             error: '',
             success: ''
           }
-          setLoggedInuser(outUser)
+          setLoggedInuser(logOutUser)
         })
         .catch((error) => {
           console.log(error.message);
         });
      }
+
      const inputFeild = (e) =>{
          let isTheFeildValid ;
          if (e.target.name === "email") { 
@@ -94,7 +95,6 @@ const Login = () => {
         if ( newUser && loggedInUser.email && loggedInUser.password) {
             firebase.auth().createUserWithEmailAndPassword(loggedInUser.email, loggedInUser.password)
             .then(res => {
-                console.log(res.user);
                 const signedInUser = {...loggedInUser}
                 signedInUser.error = ''
                 updateUserName(loggedInUser.name)
@@ -112,13 +112,12 @@ const Login = () => {
         if (!newUser && loggedInUser.email && loggedInUser.password) {
             firebase.auth().signInWithEmailAndPassword(loggedInUser.email, loggedInUser.password)
             .then(res => {
-            // const {displayName, email, phototURL} = res.user
-            // const signedInUser = {isLoggedIn: true, name: displayName, email: email, photo : phototURL}
-            const signedInUser = {...loggedInUser}
-            signedInUser.error = ''
-            signedInUser.success = true;
+            // const signedInUser = {...loggedInUser}
+            const newLoggedInUserInfo = {...loggedInUser }
+            newLoggedInUserInfo.error = ''
+            newLoggedInUserInfo.success = true;
             history.replace(from)
-            setLoggedInuser(signedInUser)
+             setLoggedInuser(newLoggedInUserInfo)
             })
             .catch((error) => {
             const signedInUser = { ...loggedInUser }
@@ -141,6 +140,7 @@ const Login = () => {
            
           });
       }
+      console.log(loggedInUser);
     return (
         <div className="container">
             {
@@ -179,8 +179,11 @@ const Login = () => {
                     <input type="password" name="password2" onBlur={inputFeild} placeholder="Re-Enter New Password" className="form-control" id="exampleInputPassword1"/>
                 </div>
                 }
-                
-                <button className="w-100 btn btn-primary" type="submit" onClick={handleSignInWithPassword}>{newUser ? "Signup" : "Log in "}</button>
+                    <button className="w-100 btn btn-primary" type="submit" onClick={handleSignInWithPassword}>
+                        {
+                            newUser ? "Sign Up" : "Log in"
+                        }
+                    </button>
                 
                 <div>
                 {
@@ -190,7 +193,7 @@ const Login = () => {
             </form>
                 
             {
-                loggedInUser.isLoggedIn && !newUser ? <button className="w-100 mt-2 btn btn-primary mt-1"  onClick={signOut}>Log Out</button> :  <div>
+                loggedInUser.isLoggedIn ? <button className="w-100 mt-2 btn btn-primary mt-1"  onClick={signOut}>Log Out</button> :  <div>
                 <div><button onClick={signInWithGoogleHandler} className="mt-2 btn btn-primary w-100">signin with google</button></div>
                 <button onClick={signInWithFaceBook} className="w-100 mt-2 btn btn-primary">signin with Facebook</button>
                 </div> 

@@ -15,13 +15,11 @@ import Blog from './Components/Blog/Blog';
 import Contact from './Components/Contact/Contact';
 import PageNotFound from './Components/PageNotFound/PageNotFound';
 export const userContext = createContext()
-
 function App() {
   const [loggedInUser,setLoggedInuser]= useState([])
   return (
     <userContext.Provider value={[loggedInUser,setLoggedInuser]}>
       <Router>
-      
         <Header/>
         <Switch>
           <Route  path="/home">
