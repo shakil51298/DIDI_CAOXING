@@ -3,7 +3,7 @@
 
 
 ### Advantage 
-- User can select any a vehicle; :+1:
+:+1: User can select any a vehicle; 
 - But before select a Vehicle user should log in or sign up first, otherwith it will kick the user!!
 - After Authinticated user can visit any page of this web app;
 - user can choice Pick up location and Pick to location and date also.
