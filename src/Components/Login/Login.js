@@ -146,9 +146,9 @@ const Login = () => {
             {
                 !loggedInUser.isLoggedIn && <p className="mt-5 text-danger">You Should Log in or Signup first</p>
             }
-            {
+            {/* {
                 newUser && loggedInUser.email && loggedInUser.submitTrue && <p style={{color:'green'}}> Hello, <span className="text-danger">{loggedInUser.name}</span> ,<span className="badge">Thanks For Signed Up to our web app.</span></p>
-            }
+            } */}
             <p className="mt-2 mb-5 text-danger"> {loggedInUser.error}</p>
             {
                 loggedInUser.success && loggedInUser.email &&  <p style={{color:'green'}}> Your {newUser && loggedInUser.email ? "account created" : "logged in"} successfully!</p>

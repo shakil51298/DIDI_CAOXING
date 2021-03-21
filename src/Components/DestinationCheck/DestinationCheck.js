@@ -48,7 +48,7 @@ const DestinationCheck = () => {
                             <input type="date" required name="date" onBlur={cathFeildValue} className="form-control" id="exampleInputPassword1"/>
                         </div>
                         <div className="mb-3">
-                            <label for="exampleInputPassword1" className="form-label">Vehicle</label>
+                            <label for="exampleInputPassword1" className="form-label">Selected Vehicle</label>
                             <input type="text" className="form-control" id="exampleInputPassword1" value={Vehicle} readOnly/>
                         </div>
                             </form> :
